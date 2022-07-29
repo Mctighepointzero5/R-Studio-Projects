@@ -1,0 +1,47 @@
+#The pourpose of this project is to develop a series of functions that 
+##produce a fibonocci sequence. 
+
+myfib2 <- function(thresh){
+  fib.a <- 1
+  fib.b <- 1
+  cat(fib.a,", ",fib.b,", ",sep="")
+  repeat{
+    temp <- fib.a+fib.b
+    fib.a <- fib.b
+    fib.b <- temp
+    cat(fib.b,", ",sep="").
+    if(fib.b>thresh){
+      cat("BREAK NOW...")
+      break
+    }
+  }
+}
+myfib2(thresh = 1000)
+
+myfib3 <- function(thresh){
+  fibseq <- c(1,1)
+  counter <- 2
+  repeat{
+    fibseq <- c(fibseq,fibseq[counter-1]+fibseq[counter])
+    counter <- counter+1
+    if(fibseq[counter]>thresh){
+      break
+    }
+  }
+  return(fibseq)
+} 
+
+
+myfib4<-function(thresh,printme){
+  if(printme){
+    myfib2(thresh)
+  }else{
+    results<-myfib3(thresh)
+    return(results)
+  }
+}
+
+myfib4(thresh=150,printme=T)
+myfib4(1000000,T)
+myfib4(150,F)
+myfib4(1000000,printme=F)
