@@ -1,5 +1,5 @@
 #The pourpose of this project is to develop a series of functions that 
-##produces a fibonocci sequence with varying utility. This will include arguments that control 
+##produce a fibonocci sequence with varying utility. This will include arguments that control 
 ###how many numbers are printed and stores them into a vector.
 
 #Step 1 creates a fibonocci sequece which begins with one and then adds the previous number.
