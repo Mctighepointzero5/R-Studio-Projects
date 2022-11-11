@@ -24,7 +24,7 @@ myfib <- function(){
 myfib()
 
 
-#Step two creates a function that causes the sequence to stop once it reaches a cetern number.
+#Step two creates a function that causes the sequence to stop once it reaches a certain number.
 
 myfib2 <- function(thresh){
   fib.a <- 1
