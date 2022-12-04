@@ -1,0 +1,20 @@
+#This code presents a somewhat more complicated visualization using the duncan data set. 
+##This scatter plot uses ifelse statements on a third variable to colorcode points based on conditions. 
+###It also features a legend 
+
+
+#Instal packages
+install.packages("car")
+library("car")
+data("Duncan")
+data.frame("Duncan")
+
+"Create plot"
+plot(Duncan$education,Duncan$income,type="p",main="Duncan",
+     xlab="education",ylab="income",xlim=c(0,100),ylim=c(0,100),
+     pch = ifelse(Duncan$prestige<=80,19,1),
+     col=ifelse(Duncan$prestige<=80,"blue","black"))
+
+"Create legend"
+legend(0,100,c("Prestige<or=80", "Prestige>80"),fill = c("blue","black"))
+data.frame(Duncan)
