@@ -1,0 +1,35 @@
+#This was a basic sentiment analysis on cleaned data. Two data files consisting of qualitative interviews with two local gay straight alliances at local high schools
+on attitudes toward marijuana and alcohol were subjected to sentiment analysis. 
+
+
+#Install packages.
+install.packages("plyr")
+install.packages("dplyr")
+install.packages("tm")
+
+#Read data frames.
+alcohol = read.csv("Alcohol Data.csv")
+marijuana = read.csv("Marijuana_data.csv")
+
+#Convert to all character#
+charalcohol = as.character(alcohol)
+charmar = as.character(marijuana)
+
+#Create function
+sentimentfun = function(text){
+  pos = readLines("positive_words.txt")
+  neg = readLines("negative_words.txt")
+  words = strsplit(text,split = " ")[[1]]
+  num_positive <- sum(words %in% pos)
+  num_negative <- sum(words %in% neg)
+  if (num_positive > num_negative) {
+    return("positive")
+  } else if (num_negative > num_positive) {
+    return("negative")
+  } else {
+    return("neutral")
+  }
+}
+
+#Call function
+sentimentfun(charmar)
